@@ -1,0 +1,11 @@
+{
+  "name": "ai-pe-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-first AI physical education playgrounds powered by MediaPipe Pose and Three.js.",
+  "scripts": {
+    "serve": "npx serve ."
+  }
+}
+

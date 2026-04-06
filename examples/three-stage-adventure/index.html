@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>三关体育闯关 | AI PE Lab</title>
+    <link rel="icon" href="data:,">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <video id="input-video" class="input-video" playsinline muted></video>
+
+    <div id="game-container">
+        <canvas id="scene-canvas"></canvas>
+
+        <div id="ui-layer">
+            <div class="hud-top">
+                <div class="panel">
+                    <h3>距离 / 关卡</h3>
+                    <div id="score">0m</div>
+                </div>
+                <div class="panel">
+                    <h3>生命</h3>
+                    <div id="lives">❤❤❤❤❤</div>
+                </div>
+                <div class="panel panel-energy">
+                    <h3>动力 / 节奏</h3>
+                    <div class="energy-wrap">
+                        <div id="energy-bar" class="energy-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mode-indicator" class="mode-indicator">🌲 森林奔跑模式 🌲</div>
+            <div id="target-arrow" class="target-arrow">⬇</div>
+            <div id="toast" class="toast">准备开始</div>
+
+            <div class="debug-bar">
+                <div><span id="status-camera" class="status-dot"></span> 全身入镜</div>
+                <div>动作: <span id="action-text" class="hl">检测中</span></div>
+                <div>方向: <span id="lane-text" class="hl">等待站位</span></div>
+            </div>
+        </div>
+
+        <div id="start-screen" class="start-screen">
+            <div class="start-inner">
+                <div class="kicker">Pose + 3D Playground</div>
+                <h1>三关体育闯关</h1>
+                <p class="subtitle">用跑、划、跳完成一条课堂体能挑战路线。</p>
+
+                <div id="intro-text" class="instructions">
+                    <div><strong>准备动作：</strong>后退一点，全身入镜，举起一只手开始校准。</div>
+                    <div><strong>森林关：</strong>原地跑步，双脚同时离地可判定为跳跃，用来跨过木桩。</div>
+                    <div><strong>激流关：</strong>双手连续摆臂划船，摆动越稳定，速度越快。</div>
+                    <div><strong>礁石关：</strong>左右或居中选择方向，双脚同时起跳，落到下一块礁石。</div>
+                </div>
+
+                <div id="detect-status" class="detect-status">
+                    <div class="detect-title">动作检测</div>
+                    <div class="check-item"><span id="status-body" class="status-dot"></span> 看到头部和脚部</div>
+                    <div class="check-item"><span id="status-hand" class="status-dot"></span> 任意一只手高过鼻尖</div>
+                    <div id="countdown" class="countdown"></div>
+                </div>
+
+                <button id="start-btn" class="start-button">点击准备</button>
+                <div id="loading" class="loading-copy">点击按钮并允许摄像头权限。</div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>
+</html>
