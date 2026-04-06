@@ -1,70 +1,71 @@
-# Three-Stage Adventure Playground
+# 三关体育闯关
 
-`three-stage-adventure` is a browser game controlled by body motion.
+`three-stage-adventure` 是 `AI PE Lab` 里的第一个公开浏览器示例。
 
-It is designed as a public example inside `AI PE Lab`, showing how one pose pipeline can drive multiple classroom-style activity modes in the same scene.
+它的目标不是只做一个小游戏，而是展示：同一套姿态输入管线，怎样驱动多个课堂动作模式，并且保持结构清晰、易于复用。
 
-## Stages
+## 三段玩法
 
-- `Forest`: run in place and jump over logs
-- `River`: use both arms to row faster
-- `Reef`: choose a direction and jump with both feet to land on the next platform
+- `森林关`：原地跑步、跳过木桩
+- `激流关`：双臂摆动划船加速
+- `礁石关`：选择方向并双脚起跳落点
 
-## What This Example Demonstrates
+## 这个示例展示了什么
 
-- full-body pose input with `MediaPipe Pose`
-- browser-only 3D scenes with `Three.js`
-- a small state machine for multi-stage classroom gameplay
-- zero-install deployment through static hosting
+- 使用 `MediaPipe Pose` 获取全身姿态输入
+- 使用 `Three.js` 渲染纯浏览器 3D 场景
+- 用一个小型状态机串联多阶段课堂玩法
+- 通过静态托管实现零安装部署
 
-## Input Mapping
+## 动作映射
 
-- raising one hand during setup starts the calibration flow
-- hip position decides lane or direction
-- both feet leaving the ground at the same time counts as a jump
-- repeated arm motion increases speed in running and rowing sections
+- 准备阶段举起一只手，用于开始校准
+- 身体横向偏移决定当前方向或落点选择
+- 双脚同时离地会被判定为跳跃
+- 连续摆臂会提升奔跑或划船阶段的速度
 
-## Run It
+## 运行方式
 
-Serve the repository with any static server, then open:
+使用任意静态文件服务器启动仓库目录，然后访问：
 
 ```text
 /examples/three-stage-adventure/
 ```
 
-The example works best in a modern desktop browser with camera permissions enabled.
+建议在支持摄像头权限的现代桌面浏览器中运行。
 
-## Screenshots
+## 截图
 
 <p align="center">
-  <img src="../../docs/screenshots/three-stage-start.png" alt="Start screen" width="49%">
-  <img src="../../docs/screenshots/three-stage-forest.png" alt="Forest mode" width="49%">
+  <img src="../../docs/screenshots/three-stage-start.png" alt="开始页" width="49%">
+  <img src="../../docs/screenshots/three-stage-forest.png" alt="森林模式" width="49%">
 </p>
 <p align="center">
-  <img src="../../docs/screenshots/three-stage-river.png" alt="River mode" width="49%">
-  <img src="../../docs/screenshots/three-stage-reef.png" alt="Reef mode" width="49%">
+  <img src="../../docs/screenshots/three-stage-river.png" alt="激流模式" width="49%">
+  <img src="../../docs/screenshots/three-stage-reef.png" alt="礁石模式" width="49%">
 </p>
 
-## Source Layout
+## 源码结构
 
-- `src/config.js`: game constants and text
-- `src/audio.js`: speech and simple browser sound effects
-- `src/ui.js`: DOM updates and start-screen flow
-- `src/scene.js`: Three.js environment and player rendering
-- `src/game.js`: runtime state machine and score logic
-- `src/pose.js`: MediaPipe Pose and camera bootstrap
-- `src/main.js`: page entrypoint
+- `src/config.js`：游戏常量和文案
+- `src/audio.js`：语音播报和浏览器音效
+- `src/ui.js`：DOM 更新和开始页交互
+- `src/scene.js`：Three.js 场景、人物和障碍物
+- `src/game.js`：核心状态机、记分和流程逻辑
+- `src/pose.js`：MediaPipe Pose 与摄像头初始化
+- `src/main.js`：页面入口
 
-## Known Limitations
+## 已知限制
 
-- movement thresholds are still tuned for demonstration, not all body sizes or camera angles
-- this version does not yet save session history
-- lighting and camera placement in real classrooms can affect pose quality
+- 动作阈值目前更偏向演示用途，仍需继续调优
+- 当前版本还没有保存历史成绩
+- 真实课堂环境中的光线、机位和距离会影响识别质量
 
-## Good Next Improvements
+## 下一步可以继续优化
 
-- add a result summary panel
-- make thresholds configurable
-- add score persistence
-- add more obstacle variations per stage
-- add screenshots or GIFs for the root README
+- 增加结果总结面板
+- 把阈值做成可配置项
+- 增加成绩持久化
+- 为每一关添加更多障碍变化
+- 在仓库首页加入 GIF 或更短的视频演示
+

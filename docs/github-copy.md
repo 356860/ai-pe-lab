@@ -8,11 +8,11 @@ Use the following text when you create the public GitHub repository.
 
 ## Short Description
 
-- `Browser-first AI physical education playgrounds built with MediaPipe Pose and Three.js.`
+- `基于 MediaPipe Pose 和 Three.js 的浏览器端 AI 体育互动示例仓库。`
 
 ## Longer About Copy
 
-- `AI PE Lab is an open playground for browser-based physical education interactions. The project explores how pose input, lightweight 3D scenes, and simple classroom game loops can become reusable teaching demos and open-source reference implementations.`
+- `AI PE Lab 是一个面向浏览器的 AI 体育互动开源实验场，探索如何把姿态识别、轻量 3D 场景和课堂游戏化流程结合成可复用的教学示例与开源参考实现。`
 
 ## Suggested Topics
 
@@ -49,4 +49,3 @@ Use these points truthfully when you later describe the repository:
 - `The examples are structured for reuse, inspection, and community contribution.`
 - `The project explores a concrete open-source niche: browser-first AI interactions for physical education and classroom activity design.`
 - `The maintainer focus is ongoing example quality, deployment simplicity, and pose-driven teaching workflows.`
-

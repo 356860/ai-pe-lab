@@ -1,60 +1,60 @@
 # AI PE Lab
 
-`AI PE Lab` is a browser-first open playground for AI-enhanced physical education activities.
+`AI PE Lab` 是一个面向浏览器的 AI 体育互动开源实验场。
 
-This repository focuses on a practical niche: turning full-body pose input into classroom-ready interactive experiences that can run in a browser with no native installation.
+这个仓库聚焦一个很具体、也很实用的方向：把全身姿态识别转化成可以直接用于课堂、公开展示和二次开发的体育互动体验，而且尽量保持 `零安装、易部署、易复用`。
 
-## Why This Repo Matters
+## 这个项目想解决什么
 
-- It explores how `MediaPipe Pose` can be used beyond demos and into real teaching interactions.
-- It keeps deployment simple enough for teachers, workshops, and public demos.
-- It treats each example as a reusable reference, not just a one-off experiment.
+- 探索 `MediaPipe Pose` 如何从“演示效果”走向“真实教学互动”。
+- 让老师和开发者都能用静态托管快速跑起一个 AI 体育示例。
+- 把每个示例都做成可以阅读、修改、扩展的开源参考，而不是一次性成品。
 
-## Current Focus
+## 当前重点
 
-The first polished example is:
+目前仓库里第一个打磨完成的公开示例是：
 
-- [Three-Stage Adventure Playground](./examples/three-stage-adventure/)
+- [三关体育闯关](./examples/three-stage-adventure/)
 
-This example turns a student into the controller for a three-part activity:
+这个示例把学生的身体动作映射成三段连续的课堂挑战：
 
-- `0-50 m`: forest runner, dodge obstacles, jump over logs
-- `50-100 m`: river rower, accelerate with arm motion
-- `100 m+`: reef hopping, choose a lane and jump with both feet
+- `0-50 米`：森林奔跑，躲避障碍、跳过木桩
+- `50-100 米`：激流划船，双臂摆动越稳定，速度越快
+- `100 米以后`：礁石跳跃，选择方向并双脚起跳落点
 
-## Design Principles
+## 设计原则
 
-- Browser first: examples should run from static hosting such as GitHub Pages.
-- Classroom friendly: interactions should be understandable in seconds.
-- Open by default: code should be easy to inspect, remix, and adapt.
-- Small moving parts: examples should stay lightweight enough for public review and contribution.
+- 浏览器优先：示例应该能直接部署到 GitHub Pages 这类静态托管平台
+- 课堂友好：学生和老师在很短时间内就能理解玩法
+- 开源优先：代码结构应当方便查看、修改、复用
+- 保持轻量：尽量减少不必要的依赖，便于公开维护和社区贡献
 
-## Who This Repo Is For
+## 适合谁使用
 
-- teachers experimenting with AI-assisted PE activities
-- developers building pose-driven interaction patterns
-- workshop facilitators who need zero-install browser demos
-- open-source contributors interested in motion UX, educational tooling, and lightweight 3D experiences
+- 想尝试 AI 体育课堂互动的老师
+- 想研究姿态驱动交互的开发者
+- 需要零安装浏览器示例的培训、工作坊或展示场景
+- 对教育工具、动作交互、轻量 3D 浏览器体验感兴趣的开源贡献者
 
-## Quick Start
+## 快速开始
 
-1. Clone or download the repository.
-2. Serve it with any static file server.
-3. Open the example path in a modern browser with camera permissions enabled.
+1. 克隆或下载本仓库
+2. 用任意静态文件服务器启动目录
+3. 在支持摄像头权限的现代浏览器中打开示例页面
 
-If you use Node.js locally:
+如果你本地装了 Node.js，可以直接运行：
 
 ```bash
 npx serve .
 ```
 
-Then open:
+然后访问：
 
 ```text
 /examples/three-stage-adventure/
 ```
 
-## Repository Layout
+## 仓库结构
 
 ```text
 ai-pe-lab/
@@ -66,50 +66,51 @@ ai-pe-lab/
       src/
 ```
 
-## What Is Already Here
+## 当前已经具备的内容
 
-- a modular browser example split into scene, pose, game, UI, and audio layers
-- clean public-facing copy suitable for GitHub sharing
-- static-host-friendly structure for GitHub Pages or any CDN
-- documentation that explains the example and its intended direction
+- 一个按 `scene / pose / game / ui / audio` 模块拆分的浏览器示例
+- 一套适合公开展示的中文项目说明
+- 可直接部署到 GitHub Pages 或任意 CDN 的静态结构
+- 面向后续扩展的文档、截图和发布素材
 
-## Screenshots
+## 截图
 
 <p align="center">
-  <img src="./docs/screenshots/three-stage-start.png" alt="Start screen" width="49%">
-  <img src="./docs/screenshots/three-stage-forest.png" alt="Forest mode" width="49%">
+  <img src="./docs/screenshots/three-stage-start.png" alt="开始页" width="49%">
+  <img src="./docs/screenshots/three-stage-forest.png" alt="森林模式" width="49%">
 </p>
 <p align="center">
-  <img src="./docs/screenshots/three-stage-river.png" alt="River mode" width="49%">
-  <img src="./docs/screenshots/three-stage-reef.png" alt="Reef mode" width="49%">
+  <img src="./docs/screenshots/three-stage-river.png" alt="激流模式" width="49%">
+  <img src="./docs/screenshots/three-stage-reef.png" alt="礁石模式" width="49%">
 </p>
 
-## Maintainer Priorities
+## 维护重点
 
-- improve pose classification quality for classroom movement patterns
-- keep examples readable enough for first-time contributors
-- add more small, remixable PE interaction demos
-- document deployment and teaching use cases more clearly
+- 持续优化课堂动作识别的稳定性
+- 让示例代码对第一次进入仓库的人也足够友好
+- 增加更多可以直接复用的小型体育互动玩法
+- 补足部署说明、教学场景说明和使用案例
 
-## Roadmap
+## 路线图
 
-- add screenshots and a short demo video
-- add score persistence and a lightweight result summary
-- expose thresholds through a simple settings panel
-- extract shared pose helpers for multiple examples
-- add more mini-games under `examples/`
+- 补充演示视频或 GIF
+- 增加成绩记录和结果总结面板
+- 把关键阈值做成简单可配置项
+- 提取多个示例共用的姿态工具模块
+- 在 `examples/` 下继续加入新的体育互动小游戏
 
-## Contributing
+## 参与贡献
 
-Contributions are welcome. Good starting areas include:
+欢迎参与贡献，比较适合入手的方向包括：
 
-- mobile and tablet compatibility
-- pose threshold tuning
-- accessibility and clearer feedback states
-- documentation, demos, and classroom deployment notes
+- 手机和平板浏览器兼容性
+- 姿态阈值调优
+- 反馈提示和无障碍体验
+- 文档、截图、演示和教学部署说明
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for a lightweight contribution workflow.
+可以先看 [CONTRIBUTING.md](./CONTRIBUTING.md)。
 
-## License
+## 开源协议
 
-This project is released under the [MIT License](./LICENSE).
+本项目使用 [MIT License](./LICENSE)。
+
