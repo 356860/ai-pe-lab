@@ -14,7 +14,7 @@
 
 目前仓库里第一个打磨完成的公开示例是：
 
-- [三关体育闯关](./examples/three-stage-adventure/)
+- [森林大冒险](./examples/three-stage-adventure/)
 
 这个示例把学生的身体动作映射成三段连续的课堂挑战：
 
@@ -113,4 +113,3 @@ ai-pe-lab/
 ## 开源协议
 
 本项目使用 [MIT License](./LICENSE)。
-

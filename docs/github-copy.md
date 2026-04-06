@@ -28,7 +28,7 @@ Use the following text when you create the public GitHub repository.
 
 ## Pinned Example Blurb
 
-- `Three-Stage Adventure is the first public example in the repo: a pose-controlled playground with forest running, river rowing, and reef hopping, built to show how one body-input pipeline can power multiple classroom interaction modes.`
+- `森林大冒险是仓库中的第一个公开示例：一个由姿态驱动的浏览器互动玩法，把森林奔跑、激流划船和礁石跳跃串成一条完整挑战路线，用来展示同一套身体输入管线如何驱动多种课堂交互模式。`
 
 ## First Release Title
 
@@ -37,7 +37,7 @@ Use the following text when you create the public GitHub repository.
 ## First Release Notes
 
 - `Initial public release of AI PE Lab.`
-- `Includes the first modular example: Three-Stage Adventure Playground.`
+- `包含首个模块化公开示例：森林大冒险。`
 - `Adds static-host-friendly repo structure for GitHub Pages.`
 - `Adds maintainable browser modules for scene, pose, audio, UI, and game logic.`
 
